@@ -12,14 +12,14 @@ const questions: Array<{ id: string; text?: string; clickable?: boolean }> = [
     text:
       "Le cidre breton devrait-il rester artisanal ou s’industrialiser pour gagner en visibilité internationale ?",
   },
-  // create locked placeholders up to 30 total (q-2 .. q-30)
-  ...Array.from({ length: 29 }, (_, i) => ({ id: `q-${i + 2}` })),
+  // create locked placeholders up to 20 total (q-2 .. q-20)
+  ...Array.from({ length: 19 }, (_, i) => ({ id: `q-${i + 2}` })),
 ];
 
 export default function MesQuestions() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const total = questions.length; // 30
+  const total = questions.length; // 20
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev - 1 + total) % total);
