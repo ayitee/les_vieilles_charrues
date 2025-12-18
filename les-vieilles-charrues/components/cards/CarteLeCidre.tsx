@@ -11,7 +11,7 @@ const allCards = [
   { id: 'card-2', name: "L'HERMINE", image: '/images/hermine.webp' },
   { id: 'card-3', name: 'LE TRISKÈLE', image: '/images/triskele.webp' },
   { id: 'card-4', name: 'KORRIGAN', image: '/images/korrigan.webp' },
-  ...Array.from({ length: 26 }, (_, i) => ({
+  ...Array.from({ length: 16 }, (_, i) => ({
     id: `card-${i + 5}`,
     name: `${i + 5}`,
     image: undefined

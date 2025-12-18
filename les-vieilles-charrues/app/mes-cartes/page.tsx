@@ -17,7 +17,7 @@ const baseCards = [
   { id: 'card-4', name: 'KORRIGAN', earned: true, image: '/images/korrigan.webp', clickable: false },
 ];
 
-const placeholderCards = Array.from({ length: 26 }, (_, idx) => {
+const placeholderCards = Array.from({ length: 16 }, (_, idx) => {
   const num = idx + 5; // start numbering at 5
   return { id: `card-${num}`, name: `${num}`, earned: false as const, image: undefined as unknown as string, clickable: false };
 });
@@ -158,7 +158,7 @@ export default function MesCartes() {
             </div>
 
             {/* Counter */}
-            <div className="font-adhesive text-3xl mt-2 mb-2">1/30</div>
+            <div className="font-adhesive text-3xl mt-2 mb-2">1/20</div>
           </>
         )}
 
