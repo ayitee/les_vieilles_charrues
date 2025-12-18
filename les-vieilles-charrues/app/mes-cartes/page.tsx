@@ -19,7 +19,7 @@ const baseCards = [
 
 const placeholderCards = Array.from({ length: 26 }, (_, idx) => {
   const num = idx + 5; // start numbering at 5
-  return { id: `card-${num}`, name: `${num}`, earned: false as const, image: undefined as unknown as string };
+  return { id: `card-${num}`, name: `${num}`, earned: false as const, image: undefined as unknown as string, clickable: false };
 });
 
 const allCards = [...baseCards, ...placeholderCards];
