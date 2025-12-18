@@ -1,0 +1,207 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  background-color: #07171e; /* ensure Safari chrome translucency shows dark */
+  height: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  min-height: 100dvh;
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+  background-color: #07171e; /* fallback under safe areas on iOS */
+}
+
+/* Adobe Typekit font - Adhesive NR Eight */
+.font-adhesive {
+  font-family: "adhesive-nr-eight", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Animated festival gradient background */
+.lv-gradient-bg {
+  position: relative;
+  min-height: 110vh;
+  height: 110vh;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: 0;
+  overflow: hidden;
+  /* Base deep teal/navy vertical gradient */
+  background:
+    linear-gradient(180deg, #07171e 0%, #0a1f28 35%, #0c2932 55%, #0d3941 75%, #0f5a53 100%),
+    /* Large soft teal glow bottom-left */
+    radial-gradient(1200px 900px at 12% 78%, rgba(20, 144, 122, 0.35) 0%, rgba(20, 144, 122, 0.18) 35%, rgba(20, 144, 122, 0) 60%),
+    /* Large soft navy glow top-right */
+    radial-gradient(1000px 800px at 86% 28%, rgba(7, 40, 51, 0.45) 0%, rgba(7, 40, 51, 0.25) 40%, rgba(7, 40, 51, 0) 70%);
+  background-size: 100% 100%, 115% 115%, 115% 115%;
+  animation: lvGradientDrift 22s ease-in-out infinite alternate;
+}
+
+@keyframes lvGradientDrift {
+  0% {
+    background-position: 0% 0%, 100% 0%, 50% 0%;
+    filter: saturate(100%) brightness(100%);
+  }
+  50% {
+    background-position: 20% 10%, 80% 20%, 50% 50%;
+    filter: saturate(110%) brightness(102%);
+  }
+  100% {
+    background-position: 40% 20%, 60% 35%, 50% 100%;
+    filter: saturate(115%) brightness(104%);
+  }
+}
+
+/* Optional subtle vignette */
+.lv-gradient-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* Vignette corners for depth */
+  background:
+    radial-gradient(1200px 800px at 4% 90%, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 55%),
+    radial-gradient(900px 700px at 96% 10%, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0) 60%);
+}
+
+@keyframes lvOrbsDrift {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.85;
+  }
+  33% {
+    transform: translate3d(-1.2%, 1.0%, 0);
+    opacity: 0.9;
+  }
+  66% {
+    transform: translate3d(1.0%, -1.5%, 0);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate3d(0.4%, 0.6%, 0);
+    opacity: 0.9;
+  }
+}
+
+/* Snowflakes falling animation */
+@keyframes snowfallDynamic {
+  0% {
+    transform: translateY(-10vh) translateX(0) rotateZ(0deg);
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(110vh) translateX(calc(var(--drift-direction) * 80px)) rotateZ(360deg);
+    opacity: 0;
+  }
+}
+
+.snowflake-dynamic {
+  position: fixed;
+  top: -10vh;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+  animation: snowfallDynamic linear forwards;
+}
+
+/* Page entrance animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Page fade-in on load */
+.lv-gradient-bg {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Card hover and scale animations */
+@keyframes cardHover {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes cardGlow {
+  from {
+    box-shadow: 0 0 0 rgba(251, 176, 114, 0);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(251, 176, 114, 0.4);
+  }
+}
+
+/* Smooth question navigation fade */
+@keyframes fadeInOut {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Button hover glow */
+@keyframes buttonGlow {
+  from {
+    box-shadow: 0 0 0 rgba(251, 176, 114, 0);
+  }
+  to {
+    box-shadow: 0 0 15px rgba(251, 176, 114, 0.3);
+  }
+}
+
+/* Padlock subtle bounce */
+@keyframes padlockBounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
