@@ -44,7 +44,7 @@ body {
   font-display: swap;
 }
 
-/* Animated festival gradient background */
+/* Background image */
 .lv-gradient-bg {
   position: relative;
   min-height: 110vh;
@@ -52,42 +52,19 @@ body {
   padding-top: env(safe-area-inset-top);
   padding-bottom: 0;
   overflow: hidden;
-  /* Base deep teal/navy vertical gradient */
-  background:
-    linear-gradient(180deg, #07171e 0%, #0a1f28 35%, #0c2932 55%, #0d3941 75%, #0f5a53 100%),
-    /* Large soft teal glow bottom-left */
-    radial-gradient(1200px 900px at 12% 78%, rgba(20, 144, 122, 0.35) 0%, rgba(20, 144, 122, 0.18) 35%, rgba(20, 144, 122, 0) 60%),
-    /* Large soft navy glow top-right */
-    radial-gradient(1000px 800px at 86% 28%, rgba(7, 40, 51, 0.45) 0%, rgba(7, 40, 51, 0.25) 40%, rgba(7, 40, 51, 0) 70%);
-  background-size: 100% 100%, 115% 115%, 115% 115%;
-  animation: lvGradientDrift 22s ease-in-out infinite alternate;
+  background-image: url('/images/background.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-@keyframes lvGradientDrift {
-  0% {
-    background-position: 0% 0%, 100% 0%, 50% 0%;
-    filter: saturate(100%) brightness(100%);
-  }
-  50% {
-    background-position: 20% 10%, 80% 20%, 50% 50%;
-    filter: saturate(110%) brightness(102%);
-  }
-  100% {
-    background-position: 40% 20%, 60% 35%, 50% 100%;
-    filter: saturate(115%) brightness(104%);
-  }
-}
-
-/* Optional subtle vignette */
+/* No overlay */
 .lv-gradient-bg::after {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  /* Vignette corners for depth */
-  background:
-    radial-gradient(1200px 800px at 4% 90%, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 55%),
-    radial-gradient(900px 700px at 96% 10%, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0) 60%);
+  background: none;
 }
 
 @keyframes lvOrbsDrift {
