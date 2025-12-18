@@ -124,14 +124,14 @@ body {
   }
 }
 
-/* Smooth transitions for all interactive elements */
-* {
+/* Smooth transitions for interactive elements only */
+button, a, [role="button"] {
   transition: background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Page fade-in on load */
+/* No page load animation */
 .lv-gradient-bg {
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: none;
 }
 
 /* Card hover and scale animations */
@@ -150,16 +150,6 @@ body {
   }
   to {
     box-shadow: 0 0 20px rgba(251, 176, 114, 0.4);
-  }
-}
-
-/* Smooth question navigation fade */
-@keyframes fadeInOut {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }
 

@@ -95,7 +95,7 @@ export default function MesCartes() {
                     <Link
                       key={card.id}
                       href={`/card/${card.id}`}
-                      className="rounded-lg p-4 text-center w-32 h-40 flex flex-col items-center justify-center cursor-pointer transform transition-all duration-300 bg-[#FBB072]/40 text-white shadow-sm backdrop-blur-sm hover:scale-110 hover:bg-[#FBB072]/55 hover:shadow-[0_0_20px_rgba(251,176,114,0.35)]"
+                      className="rounded-lg p-4 text-center w-32 h-40 flex flex-col items-center justify-center cursor-pointer transform bg-[#FBB072]/40 text-white shadow-sm backdrop-blur-sm hover:scale-110 hover:bg-[#FBB072]/55 hover:shadow-[0_0_20px_rgba(251,176,114,0.35)] hover:transition-all hover:duration-300"
                     >
                       <div className="text-[10px] uppercase tracking-wide opacity-80 mb-1">#{card.idx + 1}</div>
                       {card.image ? (
@@ -117,7 +117,7 @@ export default function MesCartes() {
                   ) : card.earned ? (
                     <div
                       key={card.id}
-                      className="rounded-lg p-4 text-center w-32 h-40 flex flex-col items-center justify-center bg-gray-600/30 text-gray-300 backdrop-blur-sm cursor-not-allowed transition-all duration-300 hover:bg-gray-600/40"
+                      className="rounded-lg p-4 text-center w-32 h-40 flex flex-col items-center justify-center bg-gray-600/30 text-gray-300 backdrop-blur-sm cursor-not-allowed hover:bg-gray-600/40"
                     >
                       <div className="text-[10px] uppercase tracking-wide opacity-80 mb-1">#{card.idx + 1}</div>
                       {card.image ? (
@@ -139,7 +139,7 @@ export default function MesCartes() {
                   ) : (
                     <div
                       key={card.id}
-                      className="rounded-lg p-4 text-center w-32 h-40 flex flex-col items-center justify-center bg-gray-600/30 text-gray-300 backdrop-blur-sm cursor-not-allowed transition-all duration-300 hover:bg-gray-600/40"
+                      className="rounded-lg p-4 text-center w-32 h-40 flex flex-col items-center justify-center bg-gray-600/30 text-gray-300 backdrop-blur-sm cursor-not-allowed hover:bg-gray-600/40"
                     >
                       <div className="text-[10px] uppercase tracking-wide opacity-80 mb-1">#{card.idx + 1}</div>
                       <div className="flex-1 flex items-center justify-center">
