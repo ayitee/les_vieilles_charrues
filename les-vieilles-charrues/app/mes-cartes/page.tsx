@@ -61,7 +61,7 @@ export default function MesCartes() {
   const visibleCards = allCards.slice(start, end).map((card, idx) => ({ ...card, idx: start + idx }));
 
   return (
-    <div className="lv-gradient-bg relative w-full min-h-screen overflow-hidden flex flex-col">
+    <div className="lv-gradient-bg relative w-full min-h-screen flex flex-col">
       {/* Logo */}
       <div className="flex justify-center pt-6">
         <Image

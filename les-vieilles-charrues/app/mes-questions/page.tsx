@@ -34,7 +34,7 @@ export default function MesQuestions() {
   const next2 = questions[(currentIndex + 2) % total];
 
   return (
-    <div className="lv-gradient-bg relative w-full min-h-screen overflow-hidden flex flex-col">
+    <div className="lv-gradient-bg relative w-full min-h-screen flex flex-col">
       {/* Logo */}
       <div className="flex justify-center pt-6">
         <Image

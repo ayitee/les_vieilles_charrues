@@ -84,7 +84,7 @@ export function CarteLeCidre({ cardId = 'le-cidre' }: { cardId?: string }) {
 
   return (
     <div
-      className="lv-gradient-bg relative w-full min-h-screen overflow-hidden flex flex-col"
+      className="lv-gradient-bg relative w-full min-h-screen flex flex-col"
       style={{ paddingTop: 'calc(2rem + env(safe-area-inset-top))' }}
     >
       {/* Overlay when in poll mode */}
