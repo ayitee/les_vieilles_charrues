@@ -95,7 +95,7 @@ export function CarteLeCidre({ cardId = 'le-cidre' }: { cardId?: string }) {
       {/* Logo */}
       <div className="flex justify-center pt-2">
         <Image
-          src="/images/logo.webp"
+          src="/images/Logo.webp"
           alt="Les Vieilles Charrues"
           width={180}
           height={60}

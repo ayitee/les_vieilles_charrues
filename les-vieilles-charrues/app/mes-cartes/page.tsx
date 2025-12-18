@@ -65,7 +65,7 @@ export default function MesCartes() {
       {/* Logo */}
       <div className="flex justify-center pt-6">
         <Image
-          src="/images/logo.webp"
+          src="/images/Logo.webp"
           alt="Les Vieilles Charrues"
           width={180}
           height={60}
